@@ -89,7 +89,7 @@ void World::draw() {
 
 void World::loadTextures() {
 	textures.load(TextureID::Background, "Media/Textures/backgroundtut.png");
-	textures.load(TextureID::Frogger, "Media/Textures/boxworld.png");
+	textures.load(TextureID::BoxWorld, "Media/Textures/boxworld.png");
 	textures.load(TextureID::Live, "Media/Textures/lives.png");
 }
 
@@ -102,7 +102,7 @@ void World::buildScene() {
 			category = Category::Type::BackgroundLayer;
 			break;
 		case River:
-			category = Category::Type::River;
+			category = Category::Type::GroundFire;
 			break;
 		default:
 			category = Category::Type::None;
@@ -163,7 +163,7 @@ void World::addEnemies()
 			enemy->setVelocity(npcSpawnTable[i].speed, 0.f);
 			enemy->setDirection(npcSpawnTable[i].direction);
 
-			if (enemy.get()->getCategory() & Category::Type::SwimmingNPC) {
+			if (enemy.get()->getCategory() & Category::Type::Enemies) {
 				sceneLayers[River]->attachChild(std::move(enemy));
 			}
 			else {
@@ -178,7 +178,7 @@ void World::addEnemies()
 			enemy->setVelocity(0.f, npcSpawnTable[11].speed);
 			enemy->setDirection(npcSpawnTable[11].direction);
 
-			if (enemy.get()->getCategory() & Category::Type::SwimmingNPC) {
+			if (enemy.get()->getCategory() & Category::Type::Enemies) {
 				sceneLayers[River]->attachChild(std::move(enemy));
 			}
 			else {
@@ -200,30 +200,30 @@ void World::handleCollisions()
 	playerFrogger->resetPositionFlags();
 
 	for (auto pair : collisionPairs) {
-		if (matchesCategories(pair, Category::Frogger, Category::Vehicle)) {
+		if (matchesCategories(pair, Category::BoxMan, Category::Platform)) {
 			playerFrogger->setIsStruckByCar(false);
 			return;
 		}
-		if (matchesCategories(pair, Category::Frogger, Category::Alligator)) {
-			playerFrogger->setIsStruckByCar(false);
+		if (matchesCategories(pair, Category::BoxMan, Category::Enemies)) {
+			playerFrogger->setIsStruckByCar(true);
 			return;
 		}
-		if (matchesCategories(pair, Category::Frogger, Category::River)) {
+		/*if (matchesCategories(pair, Category::BoxMan, Category::River)) {
 			playerFrogger->setIsInRiver(false);
 		}
-		if (matchesCategories(pair, Category::Frogger, Category::SwimmingNPC)) {
+		if (matchesCategories(pair, Category::BoxMan, Category::SwimmingNPC)) {
 			playerFrogger->setIsOnSwimmingNPC(false);
 
 			sf::Vector2f velocity = (static_cast<Actor&>(*pair.second)).getVelocity();
 
 			playerFrogger->setVelocity(velocity);
-		}
-		if (matchesCategories(pair, Category::Frogger, Category::WinningSpot)) {
+		}*/
+		if (matchesCategories(pair, Category::BoxMan, Category::WinningSpot)) {
 			Command command;
 			command.category = Category::BackgroundLayer;
 			command.action = derivedAction<Frogger>([this, pair](Frogger& f, sf::Time t) {
 
-					std::unique_ptr<Actor> winningFrogPicture(new Actor(Actor::Type::FroggerWinner, textures, fonts));
+					std::unique_ptr<Actor> winningFrogPicture(new Actor(Actor::Type::BoxWinner, textures, fonts));
 					sf::FloatRect posRect = (static_cast<InteractablePlaceHolder&>(*pair.second)).getPosition();
 					sf::Vector2f posVector (posRect.left + posRect.width / 2, posRect.top + posRect.height / 2);
 
@@ -326,7 +326,7 @@ void World::buildLivesIndicator(int frogLives)
 {
 	int interval = 25;
 	int curPosition = 5;
-	int positionY = 570;
+	int positionY = 20;
 
 	for (int i = 0; i < frogLives; ++i) {
 		std::unique_ptr<SpriteNode> live(new SpriteNode(textures.get(TextureID::Live)));

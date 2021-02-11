@@ -32,35 +32,26 @@ Actor::Actor(Type type, const TextureHolder_t& textures, const FontHolder_t& fon
 
 Actor::Actor(const TextureHolder_t& textures, const FontHolder_t& fonts)
 	: Entity(100)
-	, type_(Type::Frogger)
+	, type_(Type::Boxman)
 {}
 
 unsigned int Actor::getCategory() const
 {
 	switch (type_)
 	{
-	case Type::Frogger:
-		return Category::Frogger;
+	case Type::Boxman:
+		return Category::BoxMan;
 		break;
-	case Type::Car1:
-	case Type::Car2:
-	case Type::Car3:
-		return Category::Car;
+	case Type::Platform1:
+	case Type::Platform2:
+	case Type::MovingPlatform:
+		return Category::Platform;
 		break;
-	case Type::Truck1:
-	case Type::Truck2:
-		return Category::Truck;
-		break;
-	case Type::Log1:
-	case Type::Log2:
-		return Category::Log;
-		break;
-	case Type::Alligator:
-		return Category::Alligator;
-		break;
-	case Type::Turtle2:
-	case Type::Turtle3:
-		return Category::Turtle;
+	case Type::Enemy:
+	case Type::Fire:
+	case Type::Spike:
+	case Type::GroundFire:
+		return Category::Enemies;
 		break;
 	default:
 		return Category::None;
@@ -126,7 +117,7 @@ void Actor::updateCurrent(sf::Time dt, CommandQueue& commands)
 	updateStates();
 
 	auto rec = animations_.at(state_).getCurrentFrame();
-	if (!(type_ == Type::Turtle2 || type_ == Type::Turtle3))
+	if (!(type_ == Type::MovingPlatform || type_ == Type::Platform1))
 		rec = animations_.at(state_).update(dt);
 
 	move(velocity * dt.asSeconds());

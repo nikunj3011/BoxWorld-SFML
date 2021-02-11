@@ -18,17 +18,17 @@ namespace
 Frogger::Frogger(const TextureHolder_t& textures, const FontHolder_t& fonts)
 	: Actor(textures, fonts)
 	, state_(State::IdleUp)
-	, sprite_(textures.get(TABLE.at(Actor::Type::Frogger).texture))
+	, sprite_(textures.get(TABLE.at(Actor::Type::Boxman).texture))
 	, direction_(Direction::Up)
 	, directionIndex_(0)
 	, stateCountdown_(sf::Time::Zero)
-	, respawnPosition_(15.f, 156.f)		// Rev Dr Dr Burchill said it's ok to pass respawn point in C-TOR; it will never change because the background doesn’t scroll
+	, respawnPosition_(10.f, 120.f)		// Rev Dr Dr Burchill said it's ok to pass respawn point in C-TOR; it will never change because the background doesn’t scroll
 	, score_(0)
 	, livesLeft_(3)
 	, isMarkedForRemoval_(false)
 	, hasFroggerFilledSlots_(false)
 {
-	for (auto a : TABLE.at(Actor::Type::Frogger).animations)
+	for (auto a : TABLE.at(Actor::Type::Boxman).animations)
 	{
 		animations_[a.first] = a.second;
 	}
@@ -41,7 +41,7 @@ Frogger::Frogger(const TextureHolder_t& textures, const FontHolder_t& fonts)
 
 unsigned int Frogger::getCategory() const
 {
-	return Category::Frogger;
+	return Category::BoxMan;
 }
 
 sf::FloatRect Frogger::getBoundingRect() const

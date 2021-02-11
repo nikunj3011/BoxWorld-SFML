@@ -13,8 +13,9 @@ class Actor : public Entity
 {
 public:
     enum class Type {
-        Frogger, Car1, Car2, Car3, Truck1, Truck2, Alligator, Turtle2, Turtle3, Log1, Log2, 
-        FroggerWinner,
+        Boxman, Platform1, MovingPlatform, Platform2, Enemy, Spike, Fire, GroundFire, Gem, Exit,
+        BoxWinner,
+        
     };
 
     enum class State {

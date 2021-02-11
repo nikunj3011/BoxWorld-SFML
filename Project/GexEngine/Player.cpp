@@ -12,7 +12,7 @@ Player::Player()
 	initializeActions();
 
 	for (auto& pair : actionBindings) {
-		pair.second.category = Category::Frogger;
+		pair.second.category = Category::BoxMan;
 	}
 }
 

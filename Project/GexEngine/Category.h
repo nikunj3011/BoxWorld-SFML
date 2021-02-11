@@ -10,23 +10,26 @@ namespace Category
 	{
 		None = 0,			// 000000000
 		BackgroundLayer = 1 << 0,		// 000000001
-		Frogger			= 1 << 1,
+		BoxMan			= 1 << 1,
 
-		Car				= 1 << 2,
-		Truck			= 1 << 3,
-		Alligator		= 1 << 4,
-		Turtle			= 1 << 5,
-		Log				= 1 << 6,
+		Platform1		= 1 << 2,
+		MovingPlatform  = 1 << 3,
+		Platform2		= 1 << 4,
+		Enemy			= 1 << 5,
+		Spike			= 1 << 6,
+		Fire			= 1 << 7,
+		GroundFire		= 1 << 8,
+		Gem				= 1 << 9,
+		Exit			= 1 << 10,
 
-		River			= 1 << 7,
-		WinningSpot		= 1 << 8,
+		WinningSpot		= 1 << 11,
 
-		Score			= 1 << 9,
+		Score			= 1 << 12,
 
-		Vehicle = Car | Truck,
-		SwimmingNPC = Alligator | Turtle | Log | WinningSpot,
+		Platform = Platform1 | MovingPlatform | Platform2 | Exit,
+		Enemies = Enemy | Spike | Fire | GroundFire,
 
-		NPC = Vehicle | SwimmingNPC,
+		NPC = Platform | Enemies,
 	};
 }
 
