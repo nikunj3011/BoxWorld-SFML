@@ -74,46 +74,46 @@ std::map<Actor::Type, ActorData> initializeActorData()
 
     data[Actor::Type::Car3].texture = TextureID::Frogger;
 
-    data[Actor::Type::Car3].animations[Actor::State::Idle].addFrameSet(frames.getFramesFor("player"));
+    data[Actor::Type::Car3].animations[Actor::State::Idle].addFrameSet(frames.getFramesFor("enemy"));
     data[Actor::Type::Car3].animations[Actor::State::Idle].setDuration(sf::seconds(1.f));
     data[Actor::Type::Car3].animations[Actor::State::Idle].setRepeating(true);
 
     data[Actor::Type::Truck1].texture = TextureID::Frogger;
 
-    data[Actor::Type::Truck1].animations[Actor::State::Idle].addFrameSet(frames.getFramesFor("player"));
+    data[Actor::Type::Truck1].animations[Actor::State::Idle].addFrameSet(frames.getFramesFor("spike"));
     data[Actor::Type::Truck1].animations[Actor::State::Idle].setDuration(sf::seconds(1.f));
     data[Actor::Type::Truck1].animations[Actor::State::Idle].setRepeating(true);
 
     data[Actor::Type::Truck2].texture = TextureID::Frogger;
 
-    data[Actor::Type::Truck2].animations[Actor::State::Idle].addFrameSet(frames.getFramesFor("player"));
+    data[Actor::Type::Truck2].animations[Actor::State::Idle].addFrameSet(frames.getFramesFor("fire"));
     data[Actor::Type::Truck2].animations[Actor::State::Idle].setDuration(sf::seconds(1.f));
     data[Actor::Type::Truck2].animations[Actor::State::Idle].setRepeating(true);
 
     data[Actor::Type::Turtle2].texture = TextureID::Frogger;
 
-    data[Actor::Type::Turtle2].animations[Actor::State::Idle].addFrameSet(frames.getFramesFor("player"));
+    data[Actor::Type::Turtle2].animations[Actor::State::Idle].addFrameSet(frames.getFramesFor("movingplatform"));
     data[Actor::Type::Turtle2].animations[Actor::State::Idle].setDuration(sf::seconds(3.f));
     data[Actor::Type::Turtle2].animations[Actor::State::Idle].setRepeating(true);
 
     data[Actor::Type::Turtle3].texture = TextureID::Frogger;
 
-    data[Actor::Type::Turtle3].animations[Actor::State::Idle].addFrameSet(frames.getFramesFor("player"));
+    data[Actor::Type::Turtle3].animations[Actor::State::Idle].addFrameSet(frames.getFramesFor("platform2"));
     data[Actor::Type::Turtle3].animations[Actor::State::Idle].setDuration(sf::seconds(5.f));
     data[Actor::Type::Turtle3].animations[Actor::State::Idle].setRepeating(true);
 
 
     data[Actor::Type::Log1].texture = TextureID::Frogger;
 
-    data[Actor::Type::Log1].animations[Actor::State::Idle].addFrameSet(frames.getFramesFor("player"));
+    data[Actor::Type::Log1].animations[Actor::State::Idle].addFrameSet(frames.getFramesFor("correctgem"));
     data[Actor::Type::Log1].animations[Actor::State::Idle].setDuration(sf::seconds(1.f));
     data[Actor::Type::Log1].animations[Actor::State::Idle].setRepeating(true);
 
     data[Actor::Type::Log2].texture = TextureID::Frogger;
 
-    data[Actor::Type::Log2].animations[Actor::State::Idle].addFrameSet(frames.getFramesFor("player"));
-    data[Actor::Type::Log2].animations[Actor::State::Idle].setDuration(sf::seconds(1.f));
-    data[Actor::Type::Log2].animations[Actor::State::Idle].setRepeating(true);
+    data[Actor::Type::Log2].animations[Actor::State::Idle].addFrameSet(frames.getFramesFor("exitdoor"));
+    data[Actor::Type::Log2].animations[Actor::State::Idle].setDuration(sf::seconds(0.1f));
+    data[Actor::Type::Log2].animations[Actor::State::Idle].setRepeating(false);
 
 
     data[Actor::Type::FroggerWinner].texture = TextureID::Frogger;
@@ -140,18 +140,19 @@ std::vector<NPCSpawnData> initializeNPCSpawnData()
     spawnData[0].interval = sf::seconds(200);
     spawnData[0].elapsedTime = spawnData[0].interval;
 
-    spawnData[1].position = sf::Vector2f(-50.f, 490.f);
+    spawnData[1] = NPCSpawnData();
+    spawnData[1].position = sf::Vector2f(530.f, 250.f);
     spawnData[1].direction = Actor::Direction::Right;
-    spawnData[1].type = Actor::Type::Truck1;
-    spawnData[1].speed = 40.f;
-    spawnData[1].interval = sf::seconds(3);
+    spawnData[1].type = Actor::Type::Car1;
+    spawnData[1].speed = 0.f;
+    spawnData[1].interval = sf::seconds(100);
     spawnData[1].elapsedTime = spawnData[1].interval;
 
     spawnData[2] = NPCSpawnData();
-    spawnData[2].position = sf::Vector2f(530.f, 450.f);
-    spawnData[2].direction = Actor::Direction::Left;
+    spawnData[2].position = sf::Vector2f(540.f, 220.f);
+    spawnData[2].direction = Actor::Direction::Right;
     spawnData[2].type = Actor::Type::Car3;
-    spawnData[2].speed = -150.f;
+    spawnData[2].speed = 0.f;
     spawnData[2].interval = sf::seconds(2);
     spawnData[2].elapsedTime = spawnData[2].interval;
 
@@ -164,11 +165,11 @@ std::vector<NPCSpawnData> initializeNPCSpawnData()
     spawnData[3].elapsedTime = spawnData[3].interval;
 
     spawnData[4] = NPCSpawnData();
-    spawnData[4].position = sf::Vector2f(530.f, 370.f);
+    spawnData[4].position = sf::Vector2f(180.f, 90.f);
     spawnData[4].direction = Actor::Direction::Left;
-    spawnData[4].type = Actor::Type::Truck2;
-    spawnData[4].speed = -60.f;
-    spawnData[4].interval = sf::seconds(3);
+    spawnData[4].type = Actor::Type::Truck1;
+    spawnData[4].speed = 0.f;
+    spawnData[4].interval = sf::seconds(100);
     spawnData[4].elapsedTime = spawnData[4].interval;
 
 
@@ -181,54 +182,53 @@ std::vector<NPCSpawnData> initializeNPCSpawnData()
     spawnData[5].elapsedTime = spawnData[5].interval;
 
     spawnData[6] = NPCSpawnData();
-    spawnData[6].position = sf::Vector2f(-50.f, 260.f);
+    spawnData[6].position = sf::Vector2f(1200.f, 150.f);
     spawnData[6].direction = Actor::Direction::Right;
-    spawnData[6].type = Actor::Type::Alligator;
-    spawnData[6].speed = 70.f;
-    spawnData[6].interval = sf::seconds(6);
-    spawnData[6].elapsedTime = sf::seconds(6);;
+    spawnData[6].type = Actor::Type::Car1;
+    spawnData[6].speed = 0.f;
+    spawnData[6].interval = sf::seconds(20);
+    spawnData[6].elapsedTime = sf::seconds(20);;
 
 
     spawnData[10] = NPCSpawnData();
-    spawnData[10].position = sf::Vector2f(-50.f, 260.f);
+    spawnData[10].position = sf::Vector2f(845.f, 40.f);
     spawnData[10].direction = Actor::Direction::Right;
     spawnData[10].type = Actor::Type::Log1;
-    spawnData[10].speed = 60.f;
-    spawnData[10].interval = sf::seconds(6);
-    spawnData[10].elapsedTime = sf::seconds(3);
-
+    spawnData[10].speed = 0.f;
+    spawnData[10].interval = sf::seconds(20);
+    spawnData[10].elapsedTime = sf::seconds(20);
 
     spawnData[7] = NPCSpawnData();
-    spawnData[7].position = sf::Vector2f(530.f, 230.f);
-    spawnData[7].direction = Actor::Direction::Left;
+    spawnData[7].position = sf::Vector2f(200.f, 156.f);
+    spawnData[7].direction = Actor::Direction::Right;
     spawnData[7].type = Actor::Type::Turtle2;
-    spawnData[7].speed = -100.f;
+    spawnData[7].speed = 70.f;
     spawnData[7].interval = sf::seconds(2);
     spawnData[7].elapsedTime = spawnData[7].interval;
 
     spawnData[8] = NPCSpawnData();
-    spawnData[8].position = sf::Vector2f(-50.f, 180.f);
+    spawnData[8].position = sf::Vector2f(1290.f, 80.f);
     spawnData[8].direction = Actor::Direction::Right;
-    spawnData[8].type = Actor::Type::Log1;
-    spawnData[8].speed = 70.f;
-    spawnData[8].interval = sf::seconds(5);
-    spawnData[8].elapsedTime = sf::seconds(5);
+    spawnData[8].type = Actor::Type::Turtle3;
+    spawnData[8].speed = 0.f;
+    spawnData[8].interval = sf::seconds(20);
+    spawnData[8].elapsedTime = sf::seconds(20);
 
     spawnData[11] = NPCSpawnData();
-    spawnData[11].position = sf::Vector2f(-50.f, 180.f);
-    spawnData[11].direction = Actor::Direction::Left;
-    spawnData[11].type = Actor::Type::Alligator;
-    spawnData[11].speed = 80.f;
-    spawnData[11].interval = sf::seconds(5);
+    spawnData[11].position = sf::Vector2f(735.f, 230.f);    //(735.f, 200.f);
+    spawnData[11].direction = Actor::Direction::Up;
+    spawnData[11].type = Actor::Type::Truck2;
+    spawnData[11].speed = -50.f;
+    spawnData[11].interval = sf::seconds(3);
     spawnData[11].elapsedTime = sf::seconds(2.5);;
    
 
     spawnData[9] = NPCSpawnData();
-    spawnData[9].position = sf::Vector2f(530.f, 140.f);
+    spawnData[9].position = sf::Vector2f(180.f, 35.f);
     spawnData[9].direction = Actor::Direction::Left;
     spawnData[9].type = Actor::Type::Turtle3;
-    spawnData[9].speed = -50.f;
-    spawnData[9].interval = sf::seconds(5);
+    spawnData[9].speed = 0.f;
+    spawnData[9].interval = sf::seconds(200);
     spawnData[9].elapsedTime = spawnData[9].interval;
 
 

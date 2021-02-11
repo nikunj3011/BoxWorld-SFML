@@ -88,7 +88,7 @@ void World::draw() {
 }
 
 void World::loadTextures() {
-	textures.load(TextureID::Background, "Media/Textures/background2.png");
+	textures.load(TextureID::Background, "Media/Textures/backgroundtut.png");
 	textures.load(TextureID::Frogger, "Media/Textures/boxworld.png");
 	textures.load(TextureID::Live, "Media/Textures/lives.png");
 }
@@ -170,7 +170,24 @@ void World::addEnemies()
 				sceneLayers[PlayingLayer]->attachChild(std::move(enemy));
 			}
 		}
+		if (npcSpawnTable[11].elapsedTime >= npcSpawnTable[11].interval) {
+			npcSpawnTable[11].elapsedTime -= npcSpawnTable[11].interval;
+
+			std::unique_ptr<Actor> enemy(new Actor(npcSpawnTable[11].type, textures, fonts));
+			enemy->setPosition(npcSpawnTable[11].position);
+			enemy->setVelocity(0.f, npcSpawnTable[11].speed);
+			enemy->setDirection(npcSpawnTable[11].direction);
+
+			if (enemy.get()->getCategory() & Category::Type::SwimmingNPC) {
+				sceneLayers[River]->attachChild(std::move(enemy));
+			}
+			else {
+				sceneLayers[PlayingLayer]->attachChild(std::move(enemy));
+			}
+		}
 	}
+
+
 }
 
 void World::handleCollisions()

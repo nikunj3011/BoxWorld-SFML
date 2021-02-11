@@ -127,6 +127,48 @@
 			}
 		},
 		{
+			"filename": "exitdoor2.png",
+			"frame": {
+				"x": 159,
+				"y": 1,
+				"w": 10,
+				"h": 81
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 10,
+				"h": 81
+			},
+			"sourceSize": {
+				"w": 10,
+				"h": 81
+			}
+		},
+		{
+			"filename": "exitdoor3.png",
+			"frame": {
+				"x": 171,
+				"y": 1,
+				"w": 10,
+				"h": 81
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 10,
+				"h": 81
+			},
+			"sourceSize": {
+				"w": 10,
+				"h": 81
+			}
+		},
+		{
 			"filename": "fakegem.png",
 			"frame": {
 				"x": 183,

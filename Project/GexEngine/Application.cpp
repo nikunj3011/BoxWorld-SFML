@@ -1,6 +1,3 @@
-/*
-Alena Selezneva
-*/
 
 #include "Application.h"
 
