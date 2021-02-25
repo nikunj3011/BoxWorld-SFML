@@ -137,7 +137,7 @@ std::vector<NPCSpawnData> initializeNPCSpawnData()
     spawnData[0].direction = Actor::Direction::Left;
     spawnData[0].type = Actor::Type::Platform1;
     spawnData[0].speed = 0.f;
-    spawnData[0].interval = sf::seconds(200);
+    spawnData[0].interval = sf::seconds(40000);
     spawnData[0].elapsedTime = spawnData[0].interval;
 
     spawnData[1] = NPCSpawnData();
@@ -145,7 +145,7 @@ std::vector<NPCSpawnData> initializeNPCSpawnData()
     spawnData[1].direction = Actor::Direction::Right;
     spawnData[1].type = Actor::Type::Platform1;
     spawnData[1].speed = 0.f;
-    spawnData[1].interval = sf::seconds(100);
+    spawnData[1].interval = sf::seconds(400000);
     spawnData[1].elapsedTime = spawnData[1].interval;
 
     spawnData[2] = NPCSpawnData();
@@ -153,7 +153,7 @@ std::vector<NPCSpawnData> initializeNPCSpawnData()
     spawnData[2].direction = Actor::Direction::Right;
     spawnData[2].type = Actor::Type::Enemy;
     spawnData[2].speed = 0.f;
-    spawnData[2].interval = sf::seconds(2);
+    spawnData[2].interval = sf::seconds(400000);
     spawnData[2].elapsedTime = spawnData[2].interval;
 
     spawnData[3] = NPCSpawnData();
@@ -161,7 +161,7 @@ std::vector<NPCSpawnData> initializeNPCSpawnData()
     spawnData[3].direction = Actor::Direction::Right;
     spawnData[3].type = Actor::Type::GroundFire;
     spawnData[3].speed = 0.f;
-    spawnData[3].interval = sf::seconds(100);
+    spawnData[3].interval = sf::seconds(400000);
     spawnData[3].elapsedTime = spawnData[3].interval;
 
     spawnData[4] = NPCSpawnData();
@@ -169,7 +169,7 @@ std::vector<NPCSpawnData> initializeNPCSpawnData()
     spawnData[4].direction = Actor::Direction::Left;
     spawnData[4].type = Actor::Type::Spike;
     spawnData[4].speed = 0.f;
-    spawnData[4].interval = sf::seconds(100);
+    spawnData[4].interval = sf::seconds(400000);
     spawnData[4].elapsedTime = spawnData[4].interval;
 
 
@@ -178,7 +178,7 @@ std::vector<NPCSpawnData> initializeNPCSpawnData()
     spawnData[5].direction = Actor::Direction::Left;
     spawnData[5].type = Actor::Type::Exit;
     spawnData[5].speed = 0.f;
-    spawnData[5].interval = sf::seconds(5);
+    spawnData[5].interval = sf::seconds(400000);
     spawnData[5].elapsedTime = spawnData[5].interval;
 
     spawnData[6] = NPCSpawnData();
@@ -186,8 +186,8 @@ std::vector<NPCSpawnData> initializeNPCSpawnData()
     spawnData[6].direction = Actor::Direction::Right;
     spawnData[6].type = Actor::Type::Platform1;
     spawnData[6].speed = 0.f;
-    spawnData[6].interval = sf::seconds(20);
-    spawnData[6].elapsedTime = sf::seconds(20);;
+    spawnData[6].interval = sf::seconds(400000);
+    spawnData[6].elapsedTime = spawnData[6].interval;
 
 
     spawnData[10] = NPCSpawnData();
@@ -195,8 +195,8 @@ std::vector<NPCSpawnData> initializeNPCSpawnData()
     spawnData[10].direction = Actor::Direction::Right;
     spawnData[10].type = Actor::Type::Gem;
     spawnData[10].speed = 0.f;
-    spawnData[10].interval = sf::seconds(20);
-    spawnData[10].elapsedTime = sf::seconds(20);
+    spawnData[10].interval = sf::seconds(400000);
+    spawnData[10].elapsedTime = spawnData[6].interval;
 
     spawnData[7] = NPCSpawnData();
     spawnData[7].position = sf::Vector2f(200.f, 156.f);
@@ -211,8 +211,8 @@ std::vector<NPCSpawnData> initializeNPCSpawnData()
     spawnData[8].direction = Actor::Direction::Right;
     spawnData[8].type = Actor::Type::Platform2;
     spawnData[8].speed = 0.f;
-    spawnData[8].interval = sf::seconds(20);
-    spawnData[8].elapsedTime = sf::seconds(20);
+    spawnData[8].interval = sf::seconds(400000);
+    spawnData[8].elapsedTime = spawnData[8].interval;
 
     spawnData[11] = NPCSpawnData();
     spawnData[11].position = sf::Vector2f(735.f, 230.f);    //(735.f, 200.f);
@@ -228,7 +228,7 @@ std::vector<NPCSpawnData> initializeNPCSpawnData()
     spawnData[9].direction = Actor::Direction::Left;
     spawnData[9].type = Actor::Type::Platform2;
     spawnData[9].speed = 0.f;
-    spawnData[9].interval = sf::seconds(200);
+    spawnData[9].interval = sf::seconds(400000);
     spawnData[9].elapsedTime = spawnData[9].interval;
 
 

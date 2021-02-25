@@ -176,16 +176,16 @@ void Frogger::hop(Actor::Direction direction)
 		setPosition(sf::Vector2f(getPosition().x + playerSpeedX, getPosition().y));
 		setState(Frogger::State::JumpRight);
 	}
-	else if (direction == Actor::Direction::Up) {
-		setPosition(sf::Vector2f(getPosition().x, getPosition().y - playerSpeedY));
-		score_ += 10;
-		setState(Frogger::State::JumpUp);
-	}
-	else if (direction == Actor::Direction::Down) {
-		setPosition(sf::Vector2f(getPosition().x, getPosition().y + playerSpeedY));
-		score_ -= 10;
-		setState(Frogger::State::JumpDown);
-	}
+	//else if (direction == Actor::Direction::Up) {
+	//	setPosition(sf::Vector2f(getPosition().x, getPosition().y - playerSpeedY));
+	//	score_ += 10;
+	//	setState(Frogger::State::JumpUp);
+	//}
+	//else if (direction == Actor::Direction::Down) {
+	//	setPosition(sf::Vector2f(getPosition().x, getPosition().y + playerSpeedY));
+	//	score_ -= 10;
+	//	setState(Frogger::State::JumpDown);
+	//}
 	setStateCountdownToZero();
 }
 
@@ -213,12 +213,12 @@ void Frogger::updateStates()
 	else if (state_ == Actor::State::JumpRight && (stateCountdown_ > TIME_TO_JUMP)) {
 		setState(Actor::State::IdleRight);
 	}
-	else if (state_ == Actor::State::JumpUp && (stateCountdown_ > TIME_TO_JUMP)) {
-		setState(Actor::State::IdleUp);
-	}
-	else if (state_ == Actor::State::JumpDown && (stateCountdown_ > TIME_TO_JUMP)) {
-		setState(Actor::State::IdleDown);
-	}
+	//else if (state_ == Actor::State::JumpUp && (stateCountdown_ > TIME_TO_JUMP)) {
+	//	setState(Actor::State::IdleUp);
+	//}
+	//else if (state_ == Actor::State::JumpDown && (stateCountdown_ > TIME_TO_JUMP)) {
+	//	setState(Actor::State::IdleDown);
+	//}
 
 	if (isStruckByCar_ || (isInRiver_ && !isOnSwimmingNPC_) || isWinningSpotTaken_) {
 		setState(Actor::State::Death);

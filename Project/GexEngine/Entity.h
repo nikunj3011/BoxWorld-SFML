@@ -9,6 +9,8 @@ public:
 	void			setVelocity(sf::Vector2f v);
 	void			setVelocity(float xv, float yv);
 
+	void setBoxVelocity(float xv, float yv);
+
 	void			accelerate(sf::Vector2f v);
 	void			accelerate(float xv, float yv);
 
@@ -21,7 +23,7 @@ public:
 	void			damage(int points);
 	void			destroy();
 	virtual bool	isDestroyed() const;
-
+	float			gravity = 50;
 
 protected:
 	virtual void	updateCurrent(sf::Time dt, CommandQueue& commands) override;

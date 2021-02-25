@@ -12,8 +12,16 @@ void Entity::setVelocity(sf::Vector2f v) {
 }
 
 void Entity::setVelocity(float xv, float yv) {
+
 	velocity.x = xv;
 	velocity.y = yv;
+}
+
+void Entity::setBoxVelocity(float xv, float yv) {
+
+	velocity.x = xv;
+	velocity.y = yv;
+	velocity.y += gravity;
 }
 
 void Entity::accelerate(sf::Vector2f v) {
@@ -26,7 +34,7 @@ void Entity::accelerate(float xv, float yv) {
 }
 
 void Entity::jump(float xv, float yv) {
-	float gravity = 2;
+	float gravity = -120;
 	velocity.y += gravity;
 	velocity.x += xv;
 	velocity.y += yv;

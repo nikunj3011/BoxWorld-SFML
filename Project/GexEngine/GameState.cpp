@@ -42,7 +42,7 @@ bool GameState::handleEvent(const sf::Event& event)
 	player.handleEvent(event, commands);
 
 	// Escape pressed, trigger the pause screen
-	if (event.type == sf::Event::KeyPressed && event.key.code == sf::Keyboard::Space)
+	if (event.type == sf::Event::KeyPressed && event.key.code == sf::Keyboard::Escape)
 		requestStackPush(StateID::Pause);
 
 	return true;

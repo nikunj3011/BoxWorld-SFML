@@ -48,14 +48,15 @@ Player::MissionStatus Player::getMissionStatus() const
 void Player::initializeKeyBindings() {
 	keyBindings[sf::Keyboard::Left] = Action::MoveLeft;
 	keyBindings[sf::Keyboard::Right] = Action::MoveRight;
-	keyBindings[sf::Keyboard::Up] = Action::MoveUp;
-	keyBindings[sf::Keyboard::Down] = Action::MoveDown;
-	keyBindings[sf::Keyboard::M] = Action::Jump;
+	//keyBindings[sf::Keyboard::Up] = Action::MoveUp;
+	//keyBindings[sf::Keyboard::Down] = Action::MoveDown;
+	keyBindings[sf::Keyboard::W] = Action::Jump;
+	keyBindings[sf::Keyboard::Space] = Action::Jump;
 
 	keyBindings[sf::Keyboard::A] = Action::MoveLeft;
 	keyBindings[sf::Keyboard::D] = Action::MoveRight;
-	keyBindings[sf::Keyboard::W] = Action::MoveUp;
-	keyBindings[sf::Keyboard::S] = Action::MoveDown;
+	//keyBindings[sf::Keyboard::W] = Action::MoveUp;
+	//keyBindings[sf::Keyboard::S] = Action::MoveDown;
 }
 
 
@@ -94,8 +95,8 @@ bool Player::isRealtimeAction(Action action)
 	{
 	case Action::MoveLeft:
 	case Action::MoveRight:
-	case Action::MoveDown:
-	case Action::MoveUp:
+	//case Action::MoveDown:
+	//case Action::MoveUp:
 	case Action::Jump:
 		return true;
 	default:
