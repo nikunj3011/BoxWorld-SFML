@@ -28,7 +28,7 @@ World::World(sf::RenderTarget& outputTarget, const FontHolder_t& fonts)
 	loadTextures();
 	buildScene();
 	
-	npcSpawnTable = initializeNPCSpawnData();
+	npcSpawnTable = initializeNPCSpawnData2();
 
 	worldView.setCenter(worldView.getSize().x / 2.f, worldBounds.height - worldView.getSize().y / 2.f);
 }
@@ -89,7 +89,9 @@ void World::draw() {
 
 void World::loadTextures() {
 	textures.load(TextureID::Background, "Media/Textures/backgroundtut.png");
+	textures.load(TextureID::Background2, "Media/Textures/background3.png");
 	textures.load(TextureID::BoxWorld, "Media/Textures/boxworld.png");
+	textures.load(TextureID::BoxWorld2, "Media/Textures/level2.png");
 	textures.load(TextureID::Live, "Media/Textures/lives.png");
 }
 

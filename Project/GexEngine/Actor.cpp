@@ -10,7 +10,7 @@
 
 namespace
 {
-	const std::map<Actor::Type, ActorData> TABLE = initializeActorData();
+	const std::map<Actor::Type, ActorData> TABLE = initializeActorData2();
 }
 
 Actor::Actor(Type type, const TextureHolder_t& textures, const FontHolder_t& fonts)

@@ -32,5 +32,9 @@ std::map<Actor::Type, ActorData> initializeActorData();
 
 std::vector<NPCSpawnData> initializeNPCSpawnData();
 
+std::map<Actor::Type, ActorData> initializeActorData2();
+
+std::vector<NPCSpawnData> initializeNPCSpawnData2();
+
 std::vector<sf::FloatRect> getWinningSpotPositions();
 

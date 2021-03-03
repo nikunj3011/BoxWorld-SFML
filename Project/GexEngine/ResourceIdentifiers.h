@@ -30,7 +30,9 @@ enum class TextureID
 {
 	TitleScreen,
 	Background,
+	Background2,
 	BoxWorld,
+	BoxWorld2,
 	Live,
 
 };

@@ -1,0 +1,246 @@
+{
+	"frames": [
+		{
+			"filename": "background.png",
+			"frame": {
+				"x": 1,
+				"y": 1,
+				"w": 1275,
+				"h": 293
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 1275,
+				"h": 293
+			},
+			"sourceSize": {
+				"w": 1275,
+				"h": 293
+			}
+		},
+		{
+			"filename": "enemy.png",
+			"frame": {
+				"x": 1,
+				"y": 296,
+				"w": 19,
+				"h": 26
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 19,
+				"h": 26
+			},
+			"sourceSize": {
+				"w": 19,
+				"h": 26
+			}
+		},
+		{
+			"filename": "gem.png",
+			"frame": {
+				"x": 22,
+				"y": 296,
+				"w": 28,
+				"h": 29
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 28,
+				"h": 29
+			},
+			"sourceSize": {
+				"w": 28,
+				"h": 29
+			}
+		},
+		{
+			"filename": "platform1.png",
+			"frame": {
+				"x": 52,
+				"y": 296,
+				"w": 172,
+				"h": 41
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 172,
+				"h": 41
+			},
+			"sourceSize": {
+				"w": 172,
+				"h": 41
+			}
+		},
+		{
+			"filename": "platform2.png",
+			"frame": {
+				"x": 226,
+				"y": 296,
+				"w": 41,
+				"h": 104
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 41,
+				"h": 104
+			},
+			"sourceSize": {
+				"w": 41,
+				"h": 104
+			}
+		},
+		{
+			"filename": "platform3.png",
+			"frame": {
+				"x": 269,
+				"y": 296,
+				"w": 53,
+				"h": 31
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 53,
+				"h": 31
+			},
+			"sourceSize": {
+				"w": 53,
+				"h": 31
+			}
+		},
+		{
+			"filename": "platforms.png",
+			"frame": {
+				"x": 324,
+				"y": 296,
+				"w": 901,
+				"h": 285
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 901,
+				"h": 285
+			},
+			"sourceSize": {
+				"w": 901,
+				"h": 285
+			}
+		},
+		{
+			"filename": "player.png",
+			"frame": {
+				"x": 1227,
+				"y": 296,
+				"w": 16,
+				"h": 27
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 16,
+				"h": 27
+			},
+			"sourceSize": {
+				"w": 16,
+				"h": 27
+			}
+		},
+		{
+			"filename": "river.png",
+			"frame": {
+				"x": 1,
+				"y": 583,
+				"w": 1280,
+				"h": 25
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 1280,
+				"h": 25
+			},
+			"sourceSize": {
+				"w": 1280,
+				"h": 25
+			}
+		},
+		{
+			"filename": "spike.png",
+			"frame": {
+				"x": 1245,
+				"y": 296,
+				"w": 36,
+				"h": 13
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 36,
+				"h": 13
+			},
+			"sourceSize": {
+				"w": 36,
+				"h": 13
+			}
+		},
+		{
+			"filename": "spike2.png",
+			"frame": {
+				"x": 1245,
+				"y": 311,
+				"w": 36,
+				"h": 13
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 36,
+				"h": 13
+			},
+			"sourceSize": {
+				"w": 36,
+				"h": 13
+			}
+		}
+	],
+	"meta": {
+		"app": "http://www.codeandweb.com/texturepacker",
+		"version": "1.0",
+		"image": "spritesheet.png",
+		"format": "RGBA8888",
+		"size": {
+			"w": 1282,
+			"h": 609
+		},
+		"scale": "1"
+	}
+}
