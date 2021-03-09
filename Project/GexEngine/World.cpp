@@ -275,9 +275,15 @@ void World::handleCollisions()
 			return;
 		}
 		if (matchesCategories(pair, Category::BoxMan, Category::Enemies)) {
-			playerFrogger->setIsStruckByCar(true);
+			playerFrogger->setIsStruckByCar(true); 
 			return;
 		}
+
+		if (matchesCategories(pair, Category::BoxMan, Category::Gem)) { 
+			playerFrogger->addScore(30); 
+			return;
+		}
+
 
 		/*if (matchesCategories(pair, Category::BoxMan, Category::River)) {
 			playerFrogger->setIsInRiver(false);

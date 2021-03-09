@@ -50,6 +50,11 @@ unsigned int Actor::getCategory() const
 	case Type::MovingPlatform:
 		return Category::MovingPlatform;
 		break;
+
+	case Type::Gem:
+		return Category::Gem;
+		break;
+
 	case Type::Enemy:
 	case Type::Fire:
 	case Type::Spike:
