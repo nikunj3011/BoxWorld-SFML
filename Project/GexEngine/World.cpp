@@ -24,7 +24,7 @@ World::World(sf::RenderTarget& outputTarget, const FontHolder_t& fonts)
 	, worldBounds(0.f, 0.f, worldView.getSize().x, worldView.getSize().y)
 	, spawnPosition(15.f, 120.f)
 	, playerFrogger(nullptr)
-{
+{ 
 	sceneTexture.create(target.getSize().x, target.getSize().y);
 
 	loadTextures();
