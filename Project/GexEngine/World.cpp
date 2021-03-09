@@ -82,7 +82,7 @@ void World::update(sf::Time dt) {
 void World::updateText()
 {
 	score->setString("Score: " + std::to_string(playerFrogger->getScore()));
-	score->setPosition(370.f, 30.f);
+	score->setPosition(120.f, 30.f);
 }
 
 void World::draw() {
@@ -289,41 +289,41 @@ void World::handleCollisions()
 
 			playerFrogger->setVelocity(velocity);
 		//}*/
-		//if (matchesCategories(pair, Category::BoxMan, Category::WinningSpot)) {
-		//	Command command;
-		//	command.category = Category::BackgroundLayer;
-		//	command.action = derivedAction<Frogger>([this, pair](Frogger& f, sf::Time t) {
+		if (matchesCategories(pair, Category::BoxMan, Category::WinningSpot)) {
+			Command command;
+			command.category = Category::BackgroundLayer;
+			command.action = derivedAction<Frogger>([this, pair](Frogger& f, sf::Time t) {
 
-		//			std::unique_ptr<Actor> winningFrogPicture(new Actor(Actor::Type::BoxWinner, textures, fonts));
-		//			sf::FloatRect posRect = (static_cast<InteractablePlaceHolder&>(*pair.second)).getPosition();
-		//			sf::Vector2f posVector (posRect.left + posRect.width / 2, posRect.top + posRect.height / 2);
+					std::unique_ptr<Actor> winningFrogPicture(new Actor(Actor::Type::BoxWinner, textures, fonts));
+					sf::FloatRect posRect = (static_cast<InteractablePlaceHolder&>(*pair.second)).getPosition();
+					sf::Vector2f posVector (posRect.left + posRect.width / 2, posRect.top + posRect.height / 2);
 
-		//			int spotIndex = getWinningSpotIndexByPosition(posRect);
-		//			
-		//			if (winningSpotsFilled[spotIndex]) {
-		//					playerFrogger->setPosition(posVector);
-		//					playerFrogger->setIsWinningSpotTaken();
-		//			}
-		//			else {
-		//				winningSpotsFilled[spotIndex] = true;
-		//				winningSpotsFilled[getWinningSpotIndexByPosition(posRect)] = true;
+					int spotIndex = getWinningSpotIndexByPosition(posRect);
+					
+					if (winningSpotsFilled[spotIndex]) {
+							playerFrogger->setPosition(posVector);
+							playerFrogger->setIsWinningSpotTaken();
+					}
+					else {
+						winningSpotsFilled[spotIndex] = true;
+						winningSpotsFilled[getWinningSpotIndexByPosition(posRect)] = true;
 
-		//				winningFrogPicture.get()->setPosition(posVector);
-		//				winningFrogPicture.get()->setVelocity(0.f, 0.f);
-		//				sceneLayers[Background]->attachChild(std::move(winningFrogPicture));
+						winningFrogPicture.get()->setPosition(posVector);
+						winningFrogPicture.get()->setVelocity(0.f, 0.f);
+						sceneLayers[Background]->attachChild(std::move(winningFrogPicture));
 
-		//				playerFrogger->addScore(30);
+						playerFrogger->addScore(30);
 
-		//				//  here show winning title
-		//				if (isAllWinningSpotsFilled())
-		//					playerFrogger->setHasFroggerFilledSlots();
+						//  here show winning title
+						if (isAllWinningSpotsFilled())
+							playerFrogger->setHasFroggerFilledSlots();
 
-		//				playerFrogger->respawnFrogger();
-		//			}
-		//			
-		//		});
-		//	commandQueue.push(command);
-		//}
+						playerFrogger->respawnFrogger();
+					}
+					
+				});
+			commandQueue.push(command);
+		}
 	}
 
 }
