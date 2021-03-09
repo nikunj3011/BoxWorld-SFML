@@ -659,7 +659,7 @@ std::vector<sf::FloatRect> getWinningSpotPositions()
     float height = 70.f;
     float width = 30.f;
     float top = 120.f;
-    float left = 1155.f;
+    float left = 1255.f;
     float interval = 102.f; 
     for (int i = 0; i < 1; ++i) {
         positions.push_back(sf::FloatRect(left, top, width, height));
