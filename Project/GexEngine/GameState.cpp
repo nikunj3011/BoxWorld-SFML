@@ -1,7 +1,3 @@
-/*
-Alena Selezneva
-*/
-
 #include "GameState.h"
 
 #include <SFML/Graphics/RenderWindow.hpp>

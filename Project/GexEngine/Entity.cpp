@@ -34,7 +34,7 @@ void Entity::accelerate(float xv, float yv) {
 }
 
 void Entity::jump(float xv, float yv) {
-	float gravity = -120;
+	float gravity = -350;
 	velocity.y += gravity;
 	velocity.x += xv;
 	velocity.y += yv;

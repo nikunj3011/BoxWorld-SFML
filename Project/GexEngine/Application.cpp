@@ -13,7 +13,7 @@
 const sf::Time Application::TimePerFrame = sf::seconds(1.f / 60.f);
 
 Application::Application()
-    : window(sf::VideoMode(1280, 294), "Frogger")
+    : window(sf::VideoMode(1280, 291), "Frogger")
     , textures()
     , fonts()
     , player()

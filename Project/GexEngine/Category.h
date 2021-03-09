@@ -1,6 +1,3 @@
-/*
-Alena Selezneva
-*/
 
 #pragma once
 
@@ -12,22 +9,24 @@ namespace Category
 		BackgroundLayer = 1 << 0,		// 000000001
 		BoxMan			= 1 << 1,
 
-		Platform1		= 1 << 2,
+		Fire = 1 << 6,
+		Platform1		= 1 << 3,
 		MovingPlatform  = 1 << 3,
-		Platform2		= 1 << 4,
-		Enemy			= 1 << 5,
-		Spike			= 1 << 6,
-		Fire			= 1 << 7,
-		GroundFire		= 1 << 8,
-		Gem				= 1 << 9,
-		Exit			= 1 << 10,
-
-		WinningSpot		= 1 << 11,
-
-		Score			= 1 << 12,
-
-		Platform = Platform1 | MovingPlatform | Platform2 | Exit,
-		Enemies = Enemy | Spike | Fire | GroundFire,
+		Platform2		= 1 << 3,
+		Platform3		= 1 << 3,
+		Enemy			= 1 << 6,
+		Spike			= 1 << 7,		
+		SoundEffect = 1 << 8,
+		
+		GroundFire		= 1 << 9,
+		Gem				= 1 << 10,
+		Exit			= 1 << 11,
+		WinningSpot		= 1 << 12,
+		SpikeUp = 1 << 15,
+		Score			= 1 << 13,
+		Platforms = 1 << 3,
+		Platform = Platform1 | Platform2 | Exit | Platforms | MovingPlatform | Platform3,
+		Enemies = Enemy | Spike | SpikeUp | Fire | GroundFire,
 
 		NPC = Platform | Enemies,
 	};

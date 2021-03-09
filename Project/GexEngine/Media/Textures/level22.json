@@ -43,51 +43,30 @@
 			}
 		},
 		{
-			"filename": "enemfire.png",
+			"filename": "gem.png",
 			"frame": {
 				"x": 22,
 				"y": 296,
-				"w": 18,
-				"h": 18
+				"w": 28,
+				"h": 29
 			},
 			"rotated": false,
 			"trimmed": false,
 			"spriteSourceSize": {
 				"x": 0,
 				"y": 0,
-				"w": 18,
-				"h": 18
+				"w": 28,
+				"h": 29
 			},
 			"sourceSize": {
-				"w": 18,
-				"h": 18
-			}
-		},
-		{
-			"filename": "gem.png",
-			"frame": {
-				"x": 42,
-				"y": 296,
-				"w": 27,
-				"h": 28
-			},
-			"rotated": false,
-			"trimmed": false,
-			"spriteSourceSize": {
-				"x": 0,
-				"y": 0,
-				"w": 27,
-				"h": 28
-			},
-			"sourceSize": {
-				"w": 27,
-				"h": 28
+				"w": 28,
+				"h": 29
 			}
 		},
 		{
 			"filename": "platform1.png",
 			"frame": {
-				"x": 71,
+				"x": 52,
 				"y": 296,
 				"w": 172,
 				"h": 41
@@ -108,7 +87,7 @@
 		{
 			"filename": "platform2.png",
 			"frame": {
-				"x": 245,
+				"x": 226,
 				"y": 296,
 				"w": 41,
 				"h": 104
@@ -129,7 +108,7 @@
 		{
 			"filename": "platform3.png",
 			"frame": {
-				"x": 288,
+				"x": 269,
 				"y": 296,
 				"w": 53,
 				"h": 31
@@ -150,7 +129,7 @@
 		{
 			"filename": "platforms.png",
 			"frame": {
-				"x": 343,
+				"x": 324,
 				"y": 296,
 				"w": 901,
 				"h": 285
@@ -171,7 +150,7 @@
 		{
 			"filename": "player.png",
 			"frame": {
-				"x": 1246,
+				"x": 1227,
 				"y": 296,
 				"w": 16,
 				"h": 27
@@ -213,8 +192,8 @@
 		{
 			"filename": "spike.png",
 			"frame": {
-				"x": 1,
-				"y": 610,
+				"x": 1245,
+				"y": 296,
 				"w": 36,
 				"h": 13
 			},
@@ -232,10 +211,10 @@
 			}
 		},
 		{
-			"filename": "spikup.png",
+			"filename": "spik.png",
 			"frame": {
-				"x": 39,
-				"y": 610,
+				"x": 1245,
+				"y": 311,
 				"w": 36,
 				"h": 13
 			},
@@ -250,27 +229,6 @@
 			"sourceSize": {
 				"w": 36,
 				"h": 13
-			}
-		},
-		{
-			"filename": "win.png",
-			"frame": {
-				"x": 77,
-				"y": 610,
-				"w": 111,
-				"h": 114
-			},
-			"rotated": false,
-			"trimmed": false,
-			"spriteSourceSize": {
-				"x": 0,
-				"y": 0,
-				"w": 111,
-				"h": 114
-			},
-			"sourceSize": {
-				"w": 111,
-				"h": 114
 			}
 		}
 	],
@@ -281,7 +239,7 @@
 		"format": "RGBA8888",
 		"size": {
 			"w": 1282,
-			"h": 725
+			"h": 609
 		},
 		"scale": "1"
 	}

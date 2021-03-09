@@ -50,7 +50,7 @@ sf::FloatRect Frogger::getBoundingRect() const
 	box.width -= 10; // tighten up bounding box for more realistic collisions
 	box.left += 5;
 	box.top += 5;
-	box.height -= 10;
+	box.height -= 2;
 	return box;
 }
 

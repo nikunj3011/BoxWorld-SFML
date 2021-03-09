@@ -14,7 +14,7 @@ class Actor : public Entity
 public:
     enum class Type {
         Boxman, Platform1, MovingPlatform, Platform2, Enemy, Spike, Fire, GroundFire, Gem, Exit,
-        BoxWinner,
+        BoxWinner, Platforms, SpikeUp, Platform3
         
     };
 

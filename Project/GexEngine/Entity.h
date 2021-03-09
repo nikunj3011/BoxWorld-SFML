@@ -23,7 +23,7 @@ public:
 	void			damage(int points);
 	void			destroy();
 	virtual bool	isDestroyed() const;
-	float			gravity = 50;
+	float			gravity = 70;
 
 protected:
 	virtual void	updateCurrent(sf::Time dt, CommandQueue& commands) override;

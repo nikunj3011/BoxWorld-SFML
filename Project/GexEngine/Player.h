@@ -1,6 +1,4 @@
-/*
-Alena Selezneva
-*/
+
 
 #pragma once
 

@@ -79,6 +79,7 @@ private:
 	TextureHolder_t						textures;
 	const FontHolder_t&					fonts;
 	TextNode*							score;
+	//SoundPlayer&						sounds;
 
 	SceneNode							sceneGraph;
 	std::array<SceneNode*, LayerCount>	sceneLayers;

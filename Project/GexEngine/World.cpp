@@ -8,6 +8,8 @@
 #include "Frogger.h"
 #include <SFML\System\Sleep.hpp>
 #include <string>
+#include "SoundPlayer.h"
+#include "SoundNode.h"
 
 
 World::World(sf::RenderTarget& outputTarget, const FontHolder_t& fonts)
@@ -72,6 +74,8 @@ void World::update(sf::Time dt) {
 
 	updateLivesIndicator(playerFrogger->getLivesLeft()-1);
 
+	//updateSounds();
+
 	adaptPlayerPosition();
 }
 
@@ -88,7 +92,7 @@ void World::draw() {
 }
 
 void World::loadTextures() {
-	textures.load(TextureID::Background, "Media/Textures/backgroundtut.png");
+	textures.load(TextureID::Background, "Media/Textures/background3.png");
 	textures.load(TextureID::Background2, "Media/Textures/background3.png");
 	textures.load(TextureID::BoxWorld, "Media/Textures/boxworld.png");
 	textures.load(TextureID::BoxWorld2, "Media/Textures/level2.png");
@@ -134,6 +138,10 @@ void World::buildScene() {
 	sf::IntRect textureRect(worldBounds);
 	textureRect.height += static_cast<int>(viewHeight);
 
+	//add soundNode
+	/*std::unique_ptr<SoundNode> soundNode(new SoundNode(sounds));
+	sceneGraph.attachChild(std::move(soundNode));*/
+
 	// background spriteNode
 	std::unique_ptr<SpriteNode> background(new SpriteNode(texture, textureRect));
 	background->setPosition(worldBounds.left, worldBounds.top - viewHeight);
@@ -176,9 +184,62 @@ void World::addEnemies()
 			npcSpawnTable[11].elapsedTime -= npcSpawnTable[11].interval;
 
 			std::unique_ptr<Actor> enemy(new Actor(npcSpawnTable[11].type, textures, fonts));
-			enemy->setPosition(npcSpawnTable[11].position);
-			enemy->setVelocity(0.f, npcSpawnTable[11].speed);
-			enemy->setDirection(npcSpawnTable[11].direction);
+			if (npcSpawnTable[11].elapsedTime <= sf::seconds(3.f)) {
+				enemy->setPosition(npcSpawnTable[11].position);
+				enemy->setVelocity(0.f, npcSpawnTable[11].speed);
+				enemy->setDirection(npcSpawnTable[11].direction);
+			}
+			 /*if (npcSpawnTable[11].elapsedTime >= sf::seconds(3.f)) {
+				enemy->setPosition(npcSpawnTable[11].position);
+				enemy->setVelocity(0.f, -npcSpawnTable[11].speed);
+				enemy->setDirection(npcSpawnTable[11].direction);
+			}*/
+
+			if (enemy.get()->getCategory() & Category::Type::Enemies) {
+				sceneLayers[River]->attachChild(std::move(enemy));
+			}
+			else {
+				sceneLayers[PlayingLayer]->attachChild(std::move(enemy));
+			}
+		}
+
+		if (npcSpawnTable[28].elapsedTime >= npcSpawnTable[28].interval) {
+			npcSpawnTable[28].elapsedTime -= npcSpawnTable[28].interval;
+
+			std::unique_ptr<Actor> enemy(new Actor(npcSpawnTable[28].type, textures, fonts));
+			if (npcSpawnTable[28].elapsedTime <= sf::seconds(3.f)) {
+				enemy->setPosition(npcSpawnTable[28].position);
+				enemy->setVelocity(0.f, npcSpawnTable[28].speed);
+				enemy->setDirection(npcSpawnTable[28].direction);
+			}
+			/*if (npcSpawnTable[11].elapsedTime >= sf::seconds(3.f)) {
+			   enemy->setPosition(npcSpawnTable[11].position);
+			   enemy->setVelocity(0.f, -npcSpawnTable[11].speed);
+			   enemy->setDirection(npcSpawnTable[11].direction);
+		   }*/
+
+			if (enemy.get()->getCategory() & Category::Type::Enemies) {
+				sceneLayers[River]->attachChild(std::move(enemy));
+			}
+			else {
+				sceneLayers[PlayingLayer]->attachChild(std::move(enemy));
+			}
+		}
+
+		if (npcSpawnTable[29].elapsedTime >= npcSpawnTable[29].interval) {
+			npcSpawnTable[29].elapsedTime -= npcSpawnTable[29].interval;
+
+			std::unique_ptr<Actor> enemy(new Actor(npcSpawnTable[29].type, textures, fonts));
+			if (npcSpawnTable[29].elapsedTime <= sf::seconds(3.f)) {
+				enemy->setPosition(npcSpawnTable[29].position);
+				enemy->setVelocity(0.f, npcSpawnTable[29].speed);
+				enemy->setDirection(npcSpawnTable[29].direction);
+			}
+			/*if (npcSpawnTable[11].elapsedTime >= sf::seconds(3.f)) {
+			   enemy->setPosition(npcSpawnTable[11].position);
+			   enemy->setVelocity(0.f, -npcSpawnTable[11].speed);
+			   enemy->setDirection(npcSpawnTable[11].direction);
+		   }*/
 
 			if (enemy.get()->getCategory() & Category::Type::Enemies) {
 				sceneLayers[River]->attachChild(std::move(enemy));
@@ -203,7 +264,13 @@ void World::handleCollisions()
 
 	for (auto pair : collisionPairs) {
 		if (matchesCategories(pair, Category::BoxMan, Category::Platform)) {
-			playerFrogger->setBoxVelocity(0.f, -50.f);
+			playerFrogger->setBoxVelocity(0.f, -70.f);
+			//playerFrogger->jump(50.f, 50.f);
+			return;
+		}
+		if (matchesCategories(pair, Category::BoxMan, Category::MovingPlatform)) {
+			//playerFrogger->setBoxVelocity(70.f, -50.f);
+			playerFrogger->setBoxVelocity(0.f, -70.f);
 			//playerFrogger->jump(50.f, 50.f);
 			return;
 		}
@@ -260,6 +327,12 @@ void World::handleCollisions()
 	}
 
 }
+
+//void World::updateSounds()
+//{
+//	sounds.setListenerPosition(playerFrogger->getPosition());
+//	sounds.removeStoppedSounds();
+//}
 
 bool World::matchesCategories(SceneNode::Pair& colliders, Category::Type type1, Category::Type type2)
 {

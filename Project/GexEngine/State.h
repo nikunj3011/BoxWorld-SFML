@@ -13,6 +13,8 @@ namespace sf {
 
 class StateStack;
 class Player;
+class MusicPlayer;
+class SoundPlayer;
 
 #pragma once
 class State

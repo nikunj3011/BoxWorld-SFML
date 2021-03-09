@@ -1,6 +1,3 @@
-/*
-Alena Selezneva
-*/
 
 #include "State.h"
 #include "World.h"

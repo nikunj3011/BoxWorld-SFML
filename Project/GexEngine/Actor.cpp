@@ -43,14 +43,18 @@ unsigned int Actor::getCategory() const
 		return Category::BoxMan;
 		break;
 	case Type::Platform1:
-	case Type::Platform2:
-	case Type::MovingPlatform:
+	case Type::Platform2: 
+	case Type::Platform3:
 		return Category::Platform;
+		break;
+	case Type::MovingPlatform:
+		return Category::MovingPlatform;
 		break;
 	case Type::Enemy:
 	case Type::Fire:
 	case Type::Spike:
 	case Type::GroundFire:
+	case Type::SpikeUp:
 		return Category::Enemies;
 		break;
 	default:

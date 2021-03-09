@@ -1,6 +1,3 @@
-/*
-Alena Selezneva
-*/
 
 #include "PauseState.h"
 #include "Utility.h"
