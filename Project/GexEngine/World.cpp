@@ -82,7 +82,7 @@ void World::update(sf::Time dt) {
 void World::updateText()
 {
 	score->setString("Score: " + std::to_string(playerFrogger->getScore()));
-	score->setPosition(100.f, 30.f);
+	score->setPosition(120.f, 30.f);
 }
 
 void World::draw() {
@@ -92,8 +92,8 @@ void World::draw() {
 }
 
 void World::loadTextures() {
-	textures.load(TextureID::Background2, "Media/Textures/background3.png");
 	textures.load(TextureID::Background, "Media/Textures/backgroundtut.png");
+	textures.load(TextureID::Background2, "Media/Textures/background3.png");
 	textures.load(TextureID::BoxWorld, "Media/Textures/boxworld.png");
 	textures.load(TextureID::BoxWorld2, "Media/Textures/level2.png");
 	textures.load(TextureID::Live, "Media/Textures/lives.png");
@@ -275,9 +275,15 @@ void World::handleCollisions()
 			return;
 		}
 		if (matchesCategories(pair, Category::BoxMan, Category::Enemies)) {
-			playerFrogger->setIsStruckByCar(true);
+			playerFrogger->setIsStruckByCar(true); 
 			return;
 		}
+
+		if (matchesCategories(pair, Category::BoxMan, Category::Gem)) { 
+			playerFrogger->addScore(30); 
+			return;
+		}
+
 
 		/*if (matchesCategories(pair, Category::BoxMan, Category::River)) {
 			playerFrogger->setIsInRiver(false);

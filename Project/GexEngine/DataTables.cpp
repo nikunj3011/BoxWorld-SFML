@@ -191,7 +191,7 @@ std::vector<NPCSpawnData> initializeNPCSpawnData()
 
 
     spawnData[10] = NPCSpawnData();
-    spawnData[10].position = sf::Vector2f(845.f, 40.f);
+    spawnData[10].position = sf::Vector2f(855.f, 75.f);
     spawnData[10].direction = Actor::Direction::Right;
     spawnData[10].type = Actor::Type::Gem;
     spawnData[10].speed = 0.f;
@@ -443,7 +443,7 @@ std::vector<NPCSpawnData> initializeNPCSpawnData2()
 
     //gem
     spawnData[10] = NPCSpawnData();
-    spawnData[10].position = sf::Vector2f(845.f, 40.f);
+    spawnData[10].position = sf::Vector2f(145.f, 40.f);
     spawnData[10].direction = Actor::Direction::Right;
     spawnData[10].type = Actor::Type::Gem;
     spawnData[10].speed = 0.f;
