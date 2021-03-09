@@ -10,7 +10,7 @@
 
 namespace
 {
-	const std::map<Actor::Type, ActorData> TABLE = initializeActorData2();
+	const std::map<Actor::Type, ActorData> TABLE = initializeActorData();
 }
 
 Actor::Actor(Type type, const TextureHolder_t& textures, const FontHolder_t& fonts)
@@ -50,11 +50,6 @@ unsigned int Actor::getCategory() const
 	case Type::MovingPlatform:
 		return Category::MovingPlatform;
 		break;
-
-	case Type::Gem:
-		return Category::Gem;
-		break;
-
 	case Type::Enemy:
 	case Type::Fire:
 	case Type::Spike:

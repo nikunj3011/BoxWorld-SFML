@@ -30,7 +30,7 @@ World::World(sf::RenderTarget& outputTarget, const FontHolder_t& fonts)
 	loadTextures();
 	buildScene();
 	
-	npcSpawnTable = initializeNPCSpawnData2();
+	npcSpawnTable = initializeNPCSpawnData();
 
 	worldView.setCenter(worldView.getSize().x / 2.f, worldBounds.height - worldView.getSize().y / 2.f);
 }
@@ -82,7 +82,7 @@ void World::update(sf::Time dt) {
 void World::updateText()
 {
 	score->setString("Score: " + std::to_string(playerFrogger->getScore()));
-	score->setPosition(120.f, 30.f);
+	score->setPosition(100.f, 30.f);
 }
 
 void World::draw() {
@@ -92,8 +92,8 @@ void World::draw() {
 }
 
 void World::loadTextures() {
-	textures.load(TextureID::Background, "Media/Textures/background3.png");
 	textures.load(TextureID::Background2, "Media/Textures/background3.png");
+	textures.load(TextureID::Background, "Media/Textures/backgroundtut.png");
 	textures.load(TextureID::BoxWorld, "Media/Textures/boxworld.png");
 	textures.load(TextureID::BoxWorld2, "Media/Textures/level2.png");
 	textures.load(TextureID::Live, "Media/Textures/lives.png");
@@ -203,51 +203,51 @@ void World::addEnemies()
 			}
 		}
 
-		if (npcSpawnTable[28].elapsedTime >= npcSpawnTable[28].interval) {
-			npcSpawnTable[28].elapsedTime -= npcSpawnTable[28].interval;
+		//if (npcSpawnTable[28].elapsedTime >= npcSpawnTable[28].interval) {
+		//	npcSpawnTable[28].elapsedTime -= npcSpawnTable[28].interval;
 
-			std::unique_ptr<Actor> enemy(new Actor(npcSpawnTable[28].type, textures, fonts));
-			if (npcSpawnTable[28].elapsedTime <= sf::seconds(3.f)) {
-				enemy->setPosition(npcSpawnTable[28].position);
-				enemy->setVelocity(0.f, npcSpawnTable[28].speed);
-				enemy->setDirection(npcSpawnTable[28].direction);
-			}
-			/*if (npcSpawnTable[11].elapsedTime >= sf::seconds(3.f)) {
-			   enemy->setPosition(npcSpawnTable[11].position);
-			   enemy->setVelocity(0.f, -npcSpawnTable[11].speed);
-			   enemy->setDirection(npcSpawnTable[11].direction);
-		   }*/
+		//	std::unique_ptr<Actor> enemy(new Actor(npcSpawnTable[28].type, textures, fonts));
+		//	if (npcSpawnTable[28].elapsedTime <= sf::seconds(3.f)) {
+		//		enemy->setPosition(npcSpawnTable[28].position);
+		//		enemy->setVelocity(0.f, npcSpawnTable[28].speed);
+		//		enemy->setDirection(npcSpawnTable[28].direction);
+		//	}
+		//	/*if (npcSpawnTable[11].elapsedTime >= sf::seconds(3.f)) {
+		//	   enemy->setPosition(npcSpawnTable[11].position);
+		//	   enemy->setVelocity(0.f, -npcSpawnTable[11].speed);
+		//	   enemy->setDirection(npcSpawnTable[11].direction);
+		//   }*/
 
-			if (enemy.get()->getCategory() & Category::Type::Enemies) {
-				sceneLayers[River]->attachChild(std::move(enemy));
-			}
-			else {
-				sceneLayers[PlayingLayer]->attachChild(std::move(enemy));
-			}
-		}
+		//	if (enemy.get()->getCategory() & Category::Type::Enemies) {
+		//		sceneLayers[River]->attachChild(std::move(enemy));
+		//	}
+		//	else {
+		//		sceneLayers[PlayingLayer]->attachChild(std::move(enemy));
+		//	}
+		//}
 
-		if (npcSpawnTable[29].elapsedTime >= npcSpawnTable[29].interval) {
-			npcSpawnTable[29].elapsedTime -= npcSpawnTable[29].interval;
+		//if (npcSpawnTable[29].elapsedTime >= npcSpawnTable[29].interval) {
+		//	npcSpawnTable[29].elapsedTime -= npcSpawnTable[29].interval;
 
-			std::unique_ptr<Actor> enemy(new Actor(npcSpawnTable[29].type, textures, fonts));
-			if (npcSpawnTable[29].elapsedTime <= sf::seconds(3.f)) {
-				enemy->setPosition(npcSpawnTable[29].position);
-				enemy->setVelocity(0.f, npcSpawnTable[29].speed);
-				enemy->setDirection(npcSpawnTable[29].direction);
-			}
-			/*if (npcSpawnTable[11].elapsedTime >= sf::seconds(3.f)) {
-			   enemy->setPosition(npcSpawnTable[11].position);
-			   enemy->setVelocity(0.f, -npcSpawnTable[11].speed);
-			   enemy->setDirection(npcSpawnTable[11].direction);
-		   }*/
+		//	std::unique_ptr<Actor> enemy(new Actor(npcSpawnTable[29].type, textures, fonts));
+		//	if (npcSpawnTable[29].elapsedTime <= sf::seconds(3.f)) {
+		//		enemy->setPosition(npcSpawnTable[29].position);
+		//		enemy->setVelocity(0.f, npcSpawnTable[29].speed);
+		//		enemy->setDirection(npcSpawnTable[29].direction);
+		//	}
+		//	/*if (npcSpawnTable[11].elapsedTime >= sf::seconds(3.f)) {
+		//	   enemy->setPosition(npcSpawnTable[11].position);
+		//	   enemy->setVelocity(0.f, -npcSpawnTable[11].speed);
+		//	   enemy->setDirection(npcSpawnTable[11].direction);
+		//   }*/
 
-			if (enemy.get()->getCategory() & Category::Type::Enemies) {
-				sceneLayers[River]->attachChild(std::move(enemy));
-			}
-			else {
-				sceneLayers[PlayingLayer]->attachChild(std::move(enemy));
-			}
-		}
+		//	if (enemy.get()->getCategory() & Category::Type::Enemies) {
+		//		sceneLayers[River]->attachChild(std::move(enemy));
+		//	}
+		//	else {
+		//		sceneLayers[PlayingLayer]->attachChild(std::move(enemy));
+		//	}
+		//}
 	}
 
 
@@ -270,20 +270,14 @@ void World::handleCollisions()
 		}
 		if (matchesCategories(pair, Category::BoxMan, Category::MovingPlatform)) {
 			//playerFrogger->setBoxVelocity(70.f, -50.f);
-			playerFrogger->setBoxVelocity(0.f, -70.f);
+			playerFrogger->setBoxVelocity(70.f, -70.f);
 			//playerFrogger->jump(50.f, 50.f);
 			return;
 		}
 		if (matchesCategories(pair, Category::BoxMan, Category::Enemies)) {
-			playerFrogger->setIsStruckByCar(true); 
+			playerFrogger->setIsStruckByCar(true);
 			return;
 		}
-
-		if (matchesCategories(pair, Category::BoxMan, Category::Gem)) { 
-			playerFrogger->addScore(30); 
-			return;
-		}
-
 
 		/*if (matchesCategories(pair, Category::BoxMan, Category::River)) {
 			playerFrogger->setIsInRiver(false);

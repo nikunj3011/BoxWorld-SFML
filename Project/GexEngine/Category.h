@@ -11,7 +11,7 @@ namespace Category
 
 		Fire = 1 << 6,
 		Platform1		= 1 << 3,
-		MovingPlatform  = 1 << 3,
+		MovingPlatform  = 1 << 5,
 		Platform2		= 1 << 3,
 		Platform3		= 1 << 3,
 		Enemy			= 1 << 6,
@@ -25,7 +25,7 @@ namespace Category
 		SpikeUp = 1 << 15,
 		Score			= 1 << 13,
 		Platforms = 1 << 3,
-		Platform = Platform1 | Platform2 | Exit | Platforms | MovingPlatform | Platform3,
+		Platform = Platform1 | Platform2 | Exit | Platforms | Platform3,
 		Enemies = Enemy | Spike | SpikeUp | Fire | GroundFire,
 
 		NPC = Platform | Enemies,

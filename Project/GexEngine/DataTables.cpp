@@ -443,7 +443,7 @@ std::vector<NPCSpawnData> initializeNPCSpawnData2()
 
     //gem
     spawnData[10] = NPCSpawnData();
-    spawnData[10].position = sf::Vector2f(145.f, 40.f);
+    spawnData[10].position = sf::Vector2f(845.f, 40.f);
     spawnData[10].direction = Actor::Direction::Right;
     spawnData[10].type = Actor::Type::Gem;
     spawnData[10].speed = 0.f;
@@ -659,7 +659,7 @@ std::vector<sf::FloatRect> getWinningSpotPositions()
     float height = 70.f;
     float width = 30.f;
     float top = 120.f;
-    float left = 1155.f;
+    float left = 1255.f;
     float interval = 102.f; 
     for (int i = 0; i < 1; ++i) {
         positions.push_back(sf::FloatRect(left, top, width, height));
