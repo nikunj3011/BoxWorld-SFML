@@ -199,7 +199,7 @@ std::vector<NPCSpawnData> initializeNPCSpawnData()
     spawnData[10].elapsedTime = spawnData[6].interval;
 
     spawnData[7] = NPCSpawnData();
-    spawnData[7].position = sf::Vector2f(200.f, 156.f);
+    spawnData[7].position = sf::Vector2f(100.f, 156.f);
     spawnData[7].direction = Actor::Direction::Right;
     spawnData[7].type = Actor::Type::MovingPlatform;
     spawnData[7].speed = 70.f;
