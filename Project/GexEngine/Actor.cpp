@@ -7,7 +7,7 @@
 #include "DataTables.h"
 
 #include <SFML/Graphics/RenderTarget.hpp>
-
+ 
 namespace
 {
 	const std::map<Actor::Type, ActorData> TABLE = initializeActorData3();
