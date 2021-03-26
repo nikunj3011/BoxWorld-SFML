@@ -31,7 +31,7 @@ World::World(sf::RenderTarget& outputTarget, FontHolder_t& fonts, SoundPlayer& s
 	loadTextures();
 	buildScene();
 	
-	npcSpawnTable = initializeNPCSpawnData3();
+	npcSpawnTable = initializeNPCSpawnData2();
 
 	worldView.setCenter(worldView.getSize().x / 2.f, worldBounds.height - worldView.getSize().y / 2.f);
 }
@@ -93,7 +93,7 @@ void World::draw() {
 }
 
 void World::loadTextures() {
-	textures.load(TextureID::Background, "Media/Textures/background33.png");
+	textures.load(TextureID::Background, "Media/Textures/background3.png");
 	textures.load(TextureID::Background2, "Media/Textures/background3.png");
 	textures.load(TextureID::BoxWorld, "Media/Textures/boxworld.png");
 	textures.load(TextureID::BoxWorld2, "Media/Textures/level2.png");
@@ -188,74 +188,74 @@ void World::addEnemies()
 				sceneLayers[PlayingLayer]->attachChild(std::move(enemy));
 			}
 		}
-		//if (npcSpawnTable[11].elapsedTime >= npcSpawnTable[11].interval) {
-		//	npcSpawnTable[11].elapsedTime -= npcSpawnTable[11].interval;
+		if (npcSpawnTable[11].elapsedTime >= npcSpawnTable[11].interval) {
+			npcSpawnTable[11].elapsedTime -= npcSpawnTable[11].interval;
 
-		//	std::unique_ptr<Actor> enemy(new Actor(npcSpawnTable[11].type, textures, fonts));
-		//	if (npcSpawnTable[11].elapsedTime <= sf::seconds(3.f)) {
-		//		enemy->setPosition(npcSpawnTable[11].position);
-		//		enemy->setVelocity(0.f, npcSpawnTable[11].speed);
-		//		enemy->setDirection(npcSpawnTable[11].direction);
-		//	}
-		//	 /*if (npcSpawnTable[11].elapsedTime >= sf::seconds(3.f)) {
-		//		enemy->setPosition(npcSpawnTable[11].position);
-		//		enemy->setVelocity(0.f, -npcSpawnTable[11].speed);
-		//		enemy->setDirection(npcSpawnTable[11].direction);
-		//	}*/
+			std::unique_ptr<Actor> enemy(new Actor(npcSpawnTable[11].type, textures, fonts));
+			if (npcSpawnTable[11].elapsedTime <= sf::seconds(3.f)) {
+				enemy->setPosition(npcSpawnTable[11].position);
+				enemy->setVelocity(0.f, npcSpawnTable[11].speed);
+				enemy->setDirection(npcSpawnTable[11].direction);
+			}
+			 /*if (npcSpawnTable[11].elapsedTime >= sf::seconds(3.f)) {
+				enemy->setPosition(npcSpawnTable[11].position);
+				enemy->setVelocity(0.f, -npcSpawnTable[11].speed);
+				enemy->setDirection(npcSpawnTable[11].direction);
+			}*/
 
-		//	if (enemy.get()->getCategory() & Category::Type::Enemies) {
-		//		sceneLayers[River]->attachChild(std::move(enemy));
-		//	}
-		//	else {
-		//		sceneLayers[PlayingLayer]->attachChild(std::move(enemy));
-		//	}
-		//}
+			if (enemy.get()->getCategory() & Category::Type::Enemies) {
+				sceneLayers[River]->attachChild(std::move(enemy));
+			}
+			else {
+				sceneLayers[PlayingLayer]->attachChild(std::move(enemy));
+			}
+		}
 
-		//if (npcSpawnTable[28].elapsedTime >= npcSpawnTable[28].interval) {
-		//	npcSpawnTable[28].elapsedTime -= npcSpawnTable[28].interval;
+		if (npcSpawnTable[28].elapsedTime >= npcSpawnTable[28].interval) {
+			npcSpawnTable[28].elapsedTime -= npcSpawnTable[28].interval;
 
-		//	std::unique_ptr<Actor> enemy(new Actor(npcSpawnTable[28].type, textures, fonts));
-		//	if (npcSpawnTable[28].elapsedTime <= sf::seconds(3.f)) {
-		//		enemy->setPosition(npcSpawnTable[28].position);
-		//		enemy->setVelocity(0.f, npcSpawnTable[28].speed);
-		//		enemy->setDirection(npcSpawnTable[28].direction);
-		//	}
-		//	/*if (npcSpawnTable[11].elapsedTime >= sf::seconds(3.f)) {
-		//	   enemy->setPosition(npcSpawnTable[11].position);
-		//	   enemy->setVelocity(0.f, -npcSpawnTable[11].speed);
-		//	   enemy->setDirection(npcSpawnTable[11].direction);
-		//   }*/
+			std::unique_ptr<Actor> enemy(new Actor(npcSpawnTable[28].type, textures, fonts));
+			if (npcSpawnTable[28].elapsedTime <= sf::seconds(3.f)) {
+				enemy->setPosition(npcSpawnTable[28].position);
+				enemy->setVelocity(0.f, npcSpawnTable[28].speed);
+				enemy->setDirection(npcSpawnTable[28].direction);
+			}
+			/*if (npcSpawnTable[11].elapsedTime >= sf::seconds(3.f)) {
+			   enemy->setPosition(npcSpawnTable[11].position);
+			   enemy->setVelocity(0.f, -npcSpawnTable[11].speed);
+			   enemy->setDirection(npcSpawnTable[11].direction);
+		   }*/
 
-		//	if (enemy.get()->getCategory() & Category::Type::Enemies) {
-		//		sceneLayers[River]->attachChild(std::move(enemy));
-		//	}
-		//	else {
-		//		sceneLayers[PlayingLayer]->attachChild(std::move(enemy));
-		//	}
-		//}
+			if (enemy.get()->getCategory() & Category::Type::Enemies) {
+				sceneLayers[River]->attachChild(std::move(enemy));
+			}
+			else {
+				sceneLayers[PlayingLayer]->attachChild(std::move(enemy));
+			}
+		}
 
-		//if (npcSpawnTable[29].elapsedTime >= npcSpawnTable[29].interval) {
-		//	npcSpawnTable[29].elapsedTime -= npcSpawnTable[29].interval;
+		if (npcSpawnTable[29].elapsedTime >= npcSpawnTable[29].interval) {
+			npcSpawnTable[29].elapsedTime -= npcSpawnTable[29].interval;
 
-		//	std::unique_ptr<Actor> enemy(new Actor(npcSpawnTable[29].type, textures, fonts));
-		//	if (npcSpawnTable[29].elapsedTime <= sf::seconds(3.f)) {
-		//		enemy->setPosition(npcSpawnTable[29].position);
-		//		enemy->setVelocity(0.f, npcSpawnTable[29].speed);
-		//		enemy->setDirection(npcSpawnTable[29].direction);
-		//	}
-		//	/*if (npcSpawnTable[11].elapsedTime >= sf::seconds(3.f)) {
-		//	   enemy->setPosition(npcSpawnTable[11].position);
-		//	   enemy->setVelocity(0.f, -npcSpawnTable[11].speed);
-		//	   enemy->setDirection(npcSpawnTable[11].direction);
-		//   }*/
+			std::unique_ptr<Actor> enemy(new Actor(npcSpawnTable[29].type, textures, fonts));
+			if (npcSpawnTable[29].elapsedTime <= sf::seconds(3.f)) {
+				enemy->setPosition(npcSpawnTable[29].position);
+				enemy->setVelocity(0.f, npcSpawnTable[29].speed);
+				enemy->setDirection(npcSpawnTable[29].direction);
+			}
+			/*if (npcSpawnTable[11].elapsedTime >= sf::seconds(3.f)) {
+			   enemy->setPosition(npcSpawnTable[11].position);
+			   enemy->setVelocity(0.f, -npcSpawnTable[11].speed);
+			   enemy->setDirection(npcSpawnTable[11].direction);
+		   }*/
 
-		//	if (enemy.get()->getCategory() & Category::Type::Enemies) {
-		//		sceneLayers[River]->attachChild(std::move(enemy));
-		//	}
-		//	else {
-		//		sceneLayers[PlayingLayer]->attachChild(std::move(enemy));
-		//	}
-		//}
+			if (enemy.get()->getCategory() & Category::Type::Enemies) {
+				sceneLayers[River]->attachChild(std::move(enemy));
+			}
+			else {
+				sceneLayers[PlayingLayer]->attachChild(std::move(enemy));
+			}
+		}
 	}
 
 
