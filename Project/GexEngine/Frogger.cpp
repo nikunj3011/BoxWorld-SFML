@@ -14,7 +14,7 @@
 
 namespace
 {
-	const std::map<Actor::Type, ActorData> TABLE = initializeActorData2();
+	const std::map<Actor::Type, ActorData> TABLE = initializeActorData();
 }
 
 Frogger::Frogger(const TextureHolder_t& textures, const FontHolder_t& fonts)
