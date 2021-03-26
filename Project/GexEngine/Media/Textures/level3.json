@@ -1,0 +1,120 @@
+{
+	"frames": [
+		{
+			"filename": "platform1.png",
+			"frame": {
+				"x": 1,
+				"y": 1,
+				"w": 171,
+				"h": 41
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 171,
+				"h": 41
+			},
+			"sourceSize": {
+				"w": 171,
+				"h": 41
+			}
+		},
+		{
+			"filename": "platform2.png",
+			"frame": {
+				"x": 174,
+				"y": 1,
+				"w": 54,
+				"h": 33
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 54,
+				"h": 33
+			},
+			"sourceSize": {
+				"w": 54,
+				"h": 33
+			}
+		},
+		{
+			"filename": "platform3.png",
+			"frame": {
+				"x": 230,
+				"y": 1,
+				"w": 69,
+				"h": 45
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 69,
+				"h": 45
+			},
+			"sourceSize": {
+				"w": 69,
+				"h": 45
+			}
+		},
+		{
+			"filename": "player.png",
+			"frame": {
+				"x": 301,
+				"y": 1,
+				"w": 16,
+				"h": 27
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 16,
+				"h": 27
+			},
+			"sourceSize": {
+				"w": 16,
+				"h": 27
+			}
+		},
+		{
+			"filename": "river.png",
+			"frame": {
+				"x": 1,
+				"y": 48,
+				"w": 1280,
+				"h": 6
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 1280,
+				"h": 6
+			},
+			"sourceSize": {
+				"w": 1280,
+				"h": 6
+			}
+		}
+	],
+	"meta": {
+		"app": "http://www.codeandweb.com/texturepacker",
+		"version": "1.0",
+		"image": "spritesheet.png",
+		"format": "RGBA8888",
+		"size": {
+			"w": 1282,
+			"h": 55
+		},
+		"scale": "1"
+	}
+}

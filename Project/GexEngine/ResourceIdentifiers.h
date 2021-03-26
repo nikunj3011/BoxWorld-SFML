@@ -33,6 +33,7 @@ enum class TextureID
 	Background2,
 	BoxWorld,
 	BoxWorld2,
+	BoxWorld3,
 	Live,
 
 };

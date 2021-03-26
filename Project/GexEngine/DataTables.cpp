@@ -652,6 +652,185 @@ std::vector<NPCSpawnData> initializeNPCSpawnData2()
 }
 
 
+
+std::map<Actor::Type, ActorData> initializeActorData3()
+{
+    std::map<Actor::Type, ActorData> data;
+
+    data[Actor::Type::Boxman].texture = TextureID::BoxWorld3;
+    //data[Actor::Type::Boxman].texture = TextureID::Box;
+
+    JsonFrameParser frames = JsonFrameParser("Media/Textures/level3.json");
+    //JsonFrameParser frames2 = JsonFrameParser("Media/Textures/spritesheet (1).json");
+
+    data[Actor::Type::Boxman].animations[Actor::State::Respawn].addFrameSet(frames.getFramesFor("player"));
+    data[Actor::Type::Boxman].animations[Actor::State::Respawn].setDuration(sf::seconds(1.f));
+    data[Actor::Type::Boxman].animations[Actor::State::Respawn].setRepeating(true);
+
+    data[Actor::Type::Boxman].animations[Actor::State::IdleLeft].addFrameSet(frames.getFramesFor("player"));
+    data[Actor::Type::Boxman].animations[Actor::State::IdleLeft].setDuration(sf::seconds(1.f));
+    data[Actor::Type::Boxman].animations[Actor::State::IdleLeft].setRepeating(true);
+
+    data[Actor::Type::Boxman].animations[Actor::State::IdleRight].addFrameSet(frames.getFramesFor("player"));
+    data[Actor::Type::Boxman].animations[Actor::State::IdleRight].setDuration(sf::seconds(1.f));
+    data[Actor::Type::Boxman].animations[Actor::State::IdleRight].setRepeating(true);
+
+    data[Actor::Type::Boxman].animations[Actor::State::IdleUp].addFrameSet(frames.getFramesFor("player"));
+    data[Actor::Type::Boxman].animations[Actor::State::IdleUp].setDuration(sf::seconds(1.f));
+    data[Actor::Type::Boxman].animations[Actor::State::IdleUp].setRepeating(true);
+
+    data[Actor::Type::Boxman].animations[Actor::State::IdleDown].addFrameSet(frames.getFramesFor("player"));
+    data[Actor::Type::Boxman].animations[Actor::State::IdleDown].setDuration(sf::seconds(1.f));
+    data[Actor::Type::Boxman].animations[Actor::State::IdleDown].setRepeating(true);
+
+    data[Actor::Type::Boxman].animations[Actor::State::JumpLeft].addFrameSet(frames.getFramesFor("player"));
+    data[Actor::Type::Boxman].animations[Actor::State::JumpLeft].setDuration(sf::seconds(1.f));
+    data[Actor::Type::Boxman].animations[Actor::State::JumpLeft].setRepeating(false);
+
+    data[Actor::Type::Boxman].animations[Actor::State::JumpRight].addFrameSet(frames.getFramesFor("player"));
+    data[Actor::Type::Boxman].animations[Actor::State::JumpRight].setDuration(sf::seconds(1.f));
+    data[Actor::Type::Boxman].animations[Actor::State::JumpRight].setRepeating(false);
+
+    data[Actor::Type::Boxman].animations[Actor::State::JumpUp].addFrameSet(frames.getFramesFor("player"));
+    data[Actor::Type::Boxman].animations[Actor::State::JumpUp].setDuration(sf::seconds(1.f));
+    data[Actor::Type::Boxman].animations[Actor::State::JumpUp].setRepeating(false);
+
+    data[Actor::Type::Boxman].animations[Actor::State::JumpDown].addFrameSet(frames.getFramesFor("player"));
+    data[Actor::Type::Boxman].animations[Actor::State::JumpDown].setDuration(sf::seconds(1.f));
+    data[Actor::Type::Boxman].animations[Actor::State::JumpDown].setRepeating(true);
+
+    data[Actor::Type::Boxman].animations[Actor::State::Death].addFrameSet(frames.getFramesFor("player"));
+    data[Actor::Type::Boxman].animations[Actor::State::Death].setDuration(sf::seconds(1.f));
+    data[Actor::Type::Boxman].animations[Actor::State::Death].setRepeating(false);
+
+
+    //data[Actor::Type::Alligator].texture = TextureID::BoxWorld;
+    //data[Actor::Type::Alligator].animations[Actor::State::Idle].addFrameSet(frames.getFramesFor("player"));
+    //data[Actor::Type::Alligator].animations[Actor::State::Idle].setDuration(sf::seconds(1.f));
+    //data[Actor::Type::Alligator].animations[Actor::State::Idle].setRepeating(true);
+
+
+
+    data[Actor::Type::Platform1].texture = TextureID::BoxWorld3;
+
+    data[Actor::Type::Platform1].animations[Actor::State::Idle].addFrameSet(frames.getFramesFor("platform1"));
+    data[Actor::Type::Platform1].animations[Actor::State::Idle].setDuration(sf::seconds(1.f));
+    data[Actor::Type::Platform1].animations[Actor::State::Idle].setRepeating(true);
+
+    data[Actor::Type::GroundFire].texture = TextureID::BoxWorld3;
+
+    data[Actor::Type::GroundFire].animations[Actor::State::Idle].addFrameSet(frames.getFramesFor("river"));
+    data[Actor::Type::GroundFire].animations[Actor::State::Idle].setDuration(sf::seconds(1.f));
+    data[Actor::Type::GroundFire].animations[Actor::State::Idle].setRepeating(true); 
+
+    data[Actor::Type::Platform3].texture = TextureID::BoxWorld3;
+
+    data[Actor::Type::Platform3].animations[Actor::State::Idle].addFrameSet(frames.getFramesFor("platform3"));
+    data[Actor::Type::Platform3].animations[Actor::State::Idle].setDuration(sf::seconds(3.f));
+    data[Actor::Type::Platform3].animations[Actor::State::Idle].setRepeating(true);
+
+    data[Actor::Type::Platform2].texture = TextureID::BoxWorld3;
+
+    data[Actor::Type::Platform2].animations[Actor::State::Idle].addFrameSet(frames.getFramesFor("platform2"));
+    data[Actor::Type::Platform2].animations[Actor::State::Idle].setDuration(sf::seconds(5.f));
+    data[Actor::Type::Platform2].animations[Actor::State::Idle].setRepeating(true); 
+     
+
+    data[Actor::Type::BoxWinner].texture = TextureID::BoxWorld3;
+
+    data[Actor::Type::BoxWinner].animations[Actor::State::Idle].addFrameSet(frames.getFramesFor("player"));
+    data[Actor::Type::BoxWinner].animations[Actor::State::Idle].setDuration(sf::seconds(3.f));
+    data[Actor::Type::BoxWinner].animations[Actor::State::Idle].setRepeating(true);
+
+
+    return data;
+}
+
+std::vector<NPCSpawnData> initializeNPCSpawnData3()
+{
+    std::vector<NPCSpawnData> spawnData(8);
+
+    sf::Time time;
+
+    spawnData[0] = NPCSpawnData();
+    spawnData[0].position = sf::Vector2f(87.f, 155.f);
+    spawnData[0].direction = Actor::Direction::Left;
+    spawnData[0].type = Actor::Type::Platform1;
+    spawnData[0].speed = 0.f;
+    spawnData[0].interval = sf::seconds(40000);
+    spawnData[0].elapsedTime = spawnData[0].interval;
+
+    spawnData[1] = NPCSpawnData();
+    spawnData[1].position = sf::Vector2f(250.f, 170.f);
+    spawnData[1].direction = Actor::Direction::Right;
+    spawnData[1].type = Actor::Type::Platform2;
+    spawnData[1].speed = 0.f;
+    spawnData[1].interval = sf::seconds(400000);
+    spawnData[1].elapsedTime = spawnData[1].interval;
+
+    spawnData[2] = NPCSpawnData();
+    spawnData[2].position = sf::Vector2f(360.f, 130.f);
+    spawnData[2].direction = Actor::Direction::Right;
+    spawnData[2].type = Actor::Type::Platform3;
+    spawnData[2].speed = 0.f;
+    spawnData[2].interval = sf::seconds(400000);
+    spawnData[2].elapsedTime = spawnData[1].interval;
+
+    spawnData[3] = NPCSpawnData();
+    spawnData[3].position = sf::Vector2f(500.f, 106.f);
+    spawnData[3].direction = Actor::Direction::Right;
+    spawnData[3].type = Actor::Type::Platform2;
+    spawnData[3].speed = 0.f;
+    spawnData[3].interval = sf::seconds(400000);
+    spawnData[3].elapsedTime = spawnData[1].interval;
+
+    spawnData[4] = NPCSpawnData();
+    spawnData[4].position = sf::Vector2f(672.f, 180.f);
+    spawnData[4].direction = Actor::Direction::Right;
+    spawnData[4].type = Actor::Type::Platform3;
+    spawnData[4].speed = 0.f;
+    spawnData[4].interval = sf::seconds(400000);
+    spawnData[4].elapsedTime = spawnData[1].interval;
+
+    spawnData[5] = NPCSpawnData();
+    spawnData[5].position = sf::Vector2f(780.f, 140.f);
+    spawnData[5].direction = Actor::Direction::Left;
+    spawnData[5].type = Actor::Type::Platform2;
+    spawnData[5].speed = 0.f;
+    spawnData[5].interval = sf::seconds(400000);
+    spawnData[5].elapsedTime = spawnData[1].interval;
+
+
+    spawnData[6] = NPCSpawnData();
+    spawnData[6].position = sf::Vector2f(936.f, 157.f);
+    spawnData[6].direction = Actor::Direction::Left;
+    spawnData[6].type = Actor::Type::Platform3;
+    spawnData[6].speed = 0.f;
+    spawnData[6].interval = sf::seconds(400000);
+    spawnData[6].elapsedTime = spawnData[1].interval;
+
+    /*spawnData[6] = NPCSpawnData();
+    spawnData[6].position = sf::Vector2f(640.f, 287.f);
+    spawnData[6].direction = Actor::Direction::Left;
+    spawnData[6].type = Actor::Type::Platform2;
+    spawnData[6].speed = 0.f;
+    spawnData[6].interval = sf::seconds(400000);
+    spawnData[6].elapsedTime = spawnData[1].interval;*/
+
+    spawnData[7] = NPCSpawnData();
+    spawnData[7].position = sf::Vector2f(640.f, 287.f);
+    spawnData[7].direction = Actor::Direction::Left;
+    spawnData[7].type = Actor::Type::GroundFire;
+    spawnData[7].speed = 0.f;
+    spawnData[7].interval = sf::seconds(400000);
+    spawnData[7].elapsedTime = spawnData[1].interval;
+
+
+    return spawnData;
+
+}
+
+
 std::vector<sf::FloatRect> getWinningSpotPositions()
 {
     std::vector<sf::FloatRect> positions;
@@ -659,12 +838,14 @@ std::vector<sf::FloatRect> getWinningSpotPositions()
     float height = 70.f;
     float width = 30.f;
     float top = 120.f;
-    float left = 1255.f;
-    float interval = 102.f; 
+    float left = 1155.f;
+    //level 1 1255
+    float interval = 102.f;
     for (int i = 0; i < 1; ++i) {
         positions.push_back(sf::FloatRect(left, top, width, height));
         left += interval;
     }
+
 
     return positions;
 }
