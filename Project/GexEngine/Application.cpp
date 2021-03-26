@@ -17,7 +17,9 @@ Application::Application()
     , textures()
     , fonts()
     , player()
-    , stateStack(State::Context(window, textures, fonts, player))
+    , music()
+    , sounds()
+    , stateStack(State::Context(window, textures, fonts, player, music, sounds))
     , statsText()
     , statsUpdateTime()
     , statsNumFrames(0)
@@ -34,6 +36,7 @@ Application::Application()
 
     registerStates();
     stateStack.pushState(StateID::Title);
+    music.setVolume(25.f);
 }
 
 void Application::run()

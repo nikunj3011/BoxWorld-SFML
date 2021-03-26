@@ -10,7 +10,7 @@
 #include "Actor.h"
 #include "DataTables.h"
 #include "TextNode.h"
-
+#include "SoundPlayer.h"
 #include <SFML/System/NonCopyable.hpp>
 #include <SFML/Graphics/View.hpp>
 #include <SFML/Graphics/Texture.hpp>
@@ -26,8 +26,7 @@ namespace sf {
 class World : private sf::NonCopyable {
 
 public:
-	explicit				World(sf::RenderTarget& window,
-								const FontHolder_t& fonts);
+	explicit				World(sf::RenderTarget& window, FontHolder_t& fonts, SoundPlayer& sounds);
 	void					update(sf::Time dt);
 	void					draw();
 
@@ -45,6 +44,7 @@ private:
 	bool					matchesCategories(SceneNode::Pair& colliders, Category::Type type1, Category::Type type2);
 	void					adaptPlayerVelocity();
 	void					destroyEntitiesOutsideView();
+	void								updateSounds();
 
 	void					updateLivesIndicator(int amount);
 	void					buildLivesIndicator(int frogLives);
@@ -79,7 +79,7 @@ private:
 	TextureHolder_t						textures;
 	const FontHolder_t&					fonts;
 	TextNode*							score;
-	//SoundPlayer&						sounds;
+	SoundPlayer&						sounds;
 
 	SceneNode							sceneGraph;
 	std::array<SceneNode*, LayerCount>	sceneLayers;

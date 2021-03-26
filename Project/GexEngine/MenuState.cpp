@@ -1,7 +1,7 @@
 #include "MenuState.h"
 #include "Utility.h"
 #include "ResourceHolder.h"
-
+#include"MusicPlayer.h"
 #include <SFML/Graphics/RenderWindow.hpp>
 #include <SFML/Graphics/View.hpp>
 
@@ -31,7 +31,7 @@ MenuState::MenuState(StateStack& stack, Context context)
     options.push_back(exitOption);
 
     updateOptionText();
-    //context.music->play(MusicID::MenuTheme);
+    context.music->play(MusicID::MenuTheme);
 
 }
 

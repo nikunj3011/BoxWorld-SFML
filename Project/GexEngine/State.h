@@ -27,12 +27,16 @@ public:
 			sf::RenderWindow& window
 			, TextureHolder_t& textures
 			, FontHolder_t& fonts
-			, Player& player);
+			,Player& player,
+			MusicPlayer& music,
+			SoundPlayer& sounds);
 
 		sf::RenderWindow* window;
 		TextureHolder_t* textures;
 		FontHolder_t* fonts;
 		Player* player;
+		MusicPlayer* music;
+		SoundPlayer* sounds;
 	};
 
 	State(StateStack& stack, Context context);

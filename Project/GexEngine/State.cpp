@@ -4,15 +4,14 @@
 #include "StateStack.h"
 
 
-State::Context::Context(
-	sf::RenderWindow& window,
-	TextureHolder_t& textures,
-	FontHolder_t& fonts,
-	Player& player)
+State::Context::Context(sf::RenderWindow& window, TextureHolder_t& textures, FontHolder_t& fonts, Player& player
+	, MusicPlayer& music, SoundPlayer& sounds)
 	: window(&window)
 	, textures(&textures)
 	, fonts(&fonts)
 	, player(&player)
+	, music(&music)
+	, sounds(&sounds)
 {}
 
 State::State(StateStack& stack, Context context)

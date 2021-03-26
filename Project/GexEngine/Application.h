@@ -6,6 +6,8 @@
 #include "ResourceIdentifiers.h"
 #include "StateStack.h"
 #include "Player.h"
+#include "MusicPlayer.h"
+#include "SoundPlayer.h"
 
 #pragma once
 class Application
@@ -29,6 +31,9 @@ private:
 	TextureHolder_t			textures;
 	FontHolder_t			fonts;
 	Player					player;
+
+	MusicPlayer				music;
+	SoundPlayer				sounds;
 
 	StateStack				stateStack;
 

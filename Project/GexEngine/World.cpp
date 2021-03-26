@@ -12,12 +12,13 @@
 #include "SoundNode.h"
 
 
-World::World(sf::RenderTarget& outputTarget, const FontHolder_t& fonts)
+World::World(sf::RenderTarget& outputTarget, FontHolder_t& fonts, SoundPlayer& sounds)
 	: target(outputTarget)
 	, sceneTexture()
 	, worldView(outputTarget.getDefaultView())
 	, textures()
 	, fonts(fonts)
+	, sounds(sounds)
 	, sceneGraph()
 	, sceneLayers()
 	, commandQueue()
@@ -161,6 +162,12 @@ void World::buildScene() {
 	sceneLayers[PlayingLayer]->attachChild(std::move(frog));
 
 	buildLivesIndicator(playerFrogger->getLivesLeft()-1);
+}
+
+void World::updateSounds()
+{
+	sounds.setListenerPosition(sf::Vector2f(200,200));
+	sounds.removeStoppedSounds();
 }
 
 void World::addEnemies()

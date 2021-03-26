@@ -26,6 +26,8 @@ public:
 
     void            setIsWinningSpotTaken();
 
+    void			playLocalSound(CommandQueue& commands, EffectID effect);
+
     void            setState(State state);
     Frogger::State  getState() const;
 

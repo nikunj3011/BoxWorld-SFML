@@ -6,6 +6,8 @@
 #include "Utility.h"
 #include "DataTables.h"
 
+#include "SoundNode.h"
+
 #include <SFML/Graphics/RenderTarget.hpp>
 #include "Player.h"
 #include "StateIdentifiers.h"
@@ -52,6 +54,20 @@ sf::FloatRect Frogger::getBoundingRect() const
 	box.top += 5;
 	box.height -= 2;
 	return box;
+}
+
+void Frogger::playLocalSound(CommandQueue& commands, EffectID effect)
+{
+	auto worldPosition = sf::Vector2f(200.f,300.f);
+
+	Command command;
+	command.category = Category::SoundEffect;
+	command.action = derivedAction<SoundNode>(
+		[effect, worldPosition](SoundNode& node, sf::Time)
+		{
+			node.playSound(effect, worldPosition);
+		});
+	commands.push(command);
 }
 
 float Frogger::getMaxSpeed() const
